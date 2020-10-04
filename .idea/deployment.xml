@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="pi3" autoUploadExternalChanges="true">
+    <serverData>
+      <paths name="pi3">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/pi/tmp/talkynotes" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="pi@pi3.local:22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/pi/tmp/talkynotes" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

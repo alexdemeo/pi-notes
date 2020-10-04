@@ -1,0 +1,2 @@
+# ignore models since they're kinda big
+resources/models/*
