@@ -1,2 +1,7 @@
+.DS_Store
+
 # ignore models since they're kinda big
 resources/models/*
+
+# ignore notes
+resources/notes/*
