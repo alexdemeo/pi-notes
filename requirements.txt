@@ -1,0 +1,12 @@
+gpio~=0.3.0
+numpy~=1.19.2
+deepspeech~=0.8.2
+scipy~=1.5.3
+pyaudio~=0.2.11
+RPi.GPIO
+fuzzywuzzy~=0.18.0
+respeaker~=0.6.2
+webrtcvad~=2.0.10
+gpiozero~=1.5.1
+python-Levenshtein
+webcolors~=1.11.1
