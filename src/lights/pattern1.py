@@ -31,14 +31,14 @@ color_arr = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
 class Pattern1(Lights):
     def __init__(self, rate):
         super().__init__(rate)
-        self.colorIndex = 0
+        self.color_index = 0
 
     def tick(self, i):
-        if self.colorIndex == len(color_arr) - 1:
-            self.colorIndex = 0
+        if self.color_index == len(color_arr) - 1:
+            self.color_index = 0
         else:
-            self.colorIndex += 1
-        color_hex = color_arr[self.colorIndex]
+            self.color_index += 1
+        color_hex = color_arr[self.color_index]
         return rgb_from_hex(color_hex)
 
 

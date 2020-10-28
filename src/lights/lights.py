@@ -19,18 +19,28 @@ def rgb_from_hex(color):
 
 class Lights(metaclass=abc.ABCMeta):
     def __init__(self, rate):
-        self.rate = rate
+        self._rate = rate
         self.power = LED(5)
         self.dev = APA102(num_led=N)
         self.running = False
         self.t = None
         self.rgb = (0, 0, 0)
+        self.direction = 1
 
     def start(self):
         self.t = threading.Thread(target=self.loop)
         self.power.on()
         self.running = True
         self.t.start()
+
+    def flip_direction(self):
+        self.direction *= -1
+
+    def set_rate(self, rate):
+        self._rate = rate
+
+    def get_rate(self):
+        return self._rate
 
     @abc.abstractmethod
     def tick(self, i):
@@ -44,9 +54,11 @@ class Lights(metaclass=abc.ABCMeta):
 
     def loop(self):
         while self.running:
-            for i in range(1, N + 2):
+            bottom = 1 if self.direction == 1 else N + 2
+            top = N + 2 if self.direction == 1 else 1
+            for i in range(bottom, top, self.direction):
                 self._tick(i)
-                sleep(self.rate)
+                sleep(self._rate)
 
     def stop(self):
         if self.running:
